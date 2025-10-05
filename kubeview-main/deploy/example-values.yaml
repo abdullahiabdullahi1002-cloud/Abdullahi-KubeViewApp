@@ -1,0 +1,23 @@
+#
+# This is an example working values file I use for deploying Kubeview with Helm
+#
+# Deploy with:
+# helm upgrade my kv2/kubeview --values deploy/example-values.yaml --namespace  kubeview --install --create-namespace
+# helm upgrade my ./deploy/helm/kubeview --values deploy/example-values.yaml --namespace  kubeview --install --create-namespace
+
+image:
+  repository: ghcr.io/benc-uk/kubeview
+  pullPolicy: Always
+  tag: dev
+
+singleNamespace: false
+namespaceFilter: 'aks-|kube-|azure-wi'
+
+loadBalancer:
+  enabled: false
+
+ingress:
+  enabled: true
+  host: kubeview.kube.benco.io
+  tlsSecretName: benco-io-cert
+  className: nginx
