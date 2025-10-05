@@ -1,0 +1,15 @@
+project_name = "kubeview"
+aws_region = "eu-west-2"
+vpc_cidr = "10.0.0.0/16"
+public_subnet_1_cidr = "10.0.3.0/24"
+public_subnet_2_cidr = "10.0.4.0/24"
+public_subnet_1_az = "eu-west-2a"
+public_subnet_2_az = "eu-west-2b"
+domain_name = "abdull-kubeview.com"
+record_name = "www"
+ecr_image_url = "183317995200.dkr.ecr.eu-west-2.amazonaws.com/kubeview-app"
+task_cpu = 256
+task_memory = 512
+containerPort = 80
+ecs_task_deployment_minimum_healthy_percent = 50
+ecs_task_deployment_maximum_percent = 100
